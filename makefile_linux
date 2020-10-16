@@ -1,0 +1,21 @@
+
+main: Clustering.o Evaluation.o BisectionalKMeans.o RandomKMeans.o Functions.o
+	g++ -Wall Clustering.o Evaluation.o BisectionalKMeans.o RandomKMeans.o Functions.o -o main -g
+
+Clustering.o: Clustering.cpp Text.h
+	g++ -c -Wall Clustering.cpp -o Clustering.o -g
+
+Evaluation.o: Evaluation.cpp Text.h
+	g++ -c -Wall Evaluation.cpp -o Evaluation.o -g
+
+BisectionalKMeans.o: BisectionalKMeans.cpp Text.h
+	g++ -c -Wall BisectionalKMeans.cpp -o BisectionalKMeans.o -g
+
+RandomKMeans.o: RandomKMeans.cpp Text.h
+	g++ -c -Wall RandomKMeans.cpp -o RandomKMeans.o -g
+
+Functions.o: Functions.cpp Text.h
+	g++ -c -Wall Functions.cpp -o Functions.o -g
+
+clean:
+	rm -rf *.o
